@@ -1,4 +1,4 @@
-# IBM Business Automation Manager Open Editions - Setup Instructions
+# IBM Business Automation Manager Open Editions (BAMOE) - Setup Instructions
 This repository contains all the necessary scripts, configuration files, and other resources necessary to setup BAMOE v9.x.
 
 ## Overview
