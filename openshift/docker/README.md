@@ -3,10 +3,11 @@ From time to time you will need to re-login to the OpenShift cluster and refresh
 building to work from Maven...
 
 ## Login to OpenShift Cluster  
-You will need to re-generate the login token before using the above command, get this from the OCP Admin Console (copy login command)
+You will need to re-generate the login token before using the above command, get this from the OCP Admin Console (copy login command) and update the environment variable:
 
 ```shell
-    login --token=sha256~_p8vX9pVedjEqC2Lj6XoEAlJlP2uKScI4KKpobsu0vE --server=https://api.ocp.ibm.edu:6443
+    OCP_TOKEN=sha256~bIP7c460VMaocxfosq_3NF0-KGVeve_OIpEpA4IId2A 
+    login --token=s$OCP_TOKEN --server=https://api.ocp.ibm.edu:6443
 ```
 
 ## Login to Cocker using OCP Image Registry:    
