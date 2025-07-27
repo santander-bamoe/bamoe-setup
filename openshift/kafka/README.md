@@ -2,5 +2,5 @@
 
 1.  Login to OpenShift cluster...
 2.  Select target project: ex: _(oc project bamoe)_
-3.  Install operator: strimzi-cluster-operator.v0.44.0 provided by Strimzi, use 0.44.0 (Kafka 3.7.1)
+3.  Install operator: strimzi-cluster-operator.v0.44.0 provided by Strimzi, use 0.44.0 (Kafka 3.8.0)
 4.  Configure via operator
