@@ -1,10 +1,7 @@
-if [ "$OCP_TOKEN" == "" ]; then
-    echo "Please log into the OpenShift cluster and get a new login token before running this command..."
-    echo "---> Set the OCP_TOKEN variable to the new loging token"
-    exit 1
-fi
+echo "Please log into the OpenShift cluster and get a new login token before running this command..."
+echo "---> Set the OCP_TOKEN variable to the new loging token"
 
-OCP_TOKEN=sha256~arL22IZIA7YSsdhH21jlr0O_6kUJ-nc0jZDGfazP030
+OCP_TOKEN=sha256~fiylxOcY54bXDvSuqof5fnUuIEtSMN7B0GaCwS8LmJA
 echo "OCP Token:" $OCP_TOKEN
 
 echo "Logging into OCP using new token and setting default project..."
