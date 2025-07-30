@@ -6,13 +6,15 @@ building to work from Maven...
 You will need to re-generate the login token before using the above command, get this from the OCP Admin Console (copy login command) and update the environment variable:
 
 ```shell
-    OCP_TOKEN=sha256~bIP7c460VMaocxfosq_3NF0-KGVeve_OIpEpA4IId2A 
-    login --token=s$OCP_TOKEN --server=https://api.ocp.ibm.edu:6443
+OCP_TOKEN=sha256~arL22IZIA7YSsdhH21jlr0O_6kUJ-nc0jZDGfazP030
+echo "OCP Token:" $OCP_TOKEN
+
+echo "Logging into OCP using new token and setting default project..."
+oc login --token=$OCP_TOKEN --server=https://api.ocp.ibm.edu:6443
+oc project bamoe-apps
+
+echo "Logging into Docker using new token..."
+HOST=$(oc get route default-route -n openshift-image-registry --template='{{ .spec.host }}')
+docker login -u $(oc whoami) -p $(oc whoami -t) $HOST
 ```
 
-## Login to Cocker using OCP Image Registry:    
-
-```shell
-    HOST=$(oc get route default-route -n openshift-image-registry --template='{{ .spec.host }}')
-    docker login -u $(oc whoami) -p $(oc whoami -t) $HOST
-```
