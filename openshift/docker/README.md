@@ -1,16 +1,9 @@
 # IBM Business Automation Manager Open Editions - Setup Instructions for Red Hat OpenShift - Docker
-From time to time you will need to re-login to the OpenShift cluster and refresh your token.  Once you do that, re-login to docker in order for container image
-building to work from Maven...
-
-## Login to OpenShift Cluster  
-You will need to re-generate the login token before using the above command, get this from the OCP Admin Console (copy login command) and update the environment variable:
+In order for Maven builds to produce a container image using Quarkus JIB, you must be logged into Docker.  From time to time you will need to re-login to the OpenShift cluster as well as login to Docker.  You can use the following commands in a terminal window or run the script named `setup-quarkus-jib.sh` from this folder.
 
 ```shell
-OCP_TOKEN=sha256~arL22IZIA7YSsdhH21jlr0O_6kUJ-nc0jZDGfazP030
-echo "OCP Token:" $OCP_TOKEN
-
-echo "Logging into OCP using new token and setting default project..."
-oc login --token=$OCP_TOKEN --server=https://api.ocp.ibm.edu:6443
+echo "Logging into OCP and setting default project..."
+oc login --username=ocadmin --password=ibmrhocp https://api.ocp.ibm.edu:6443
 oc project bamoe-apps
 
 echo "Logging into Docker using new token..."
