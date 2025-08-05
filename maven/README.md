@@ -24,12 +24,12 @@ docker compose up bamoe-maven-921
 
 You can verify the repository is running by accessing the repository in your browser at http://localhost:<PORT>/com/ibm/bamoe.
 
-2. Copy the file named `settings.xml` to your local .m2 folder
+2. Copy the file named `settings.xml` to your local ~.m2 folder
 
 ## Configuring a local Maven Repository 
 If you prefer not to use containers, you can download and configure the BAMOE Maven repository from the compressed file. The BAMOE Maven repository contains the libraries that Java developers need to build BAMOE applications.  The following approach can also be used in order to make Maven depencencies available from an enterprise Maven repository, such as `Artifactory`.  To configure the BAMOE Maven repository locally follow these steps:
 
-1.  Download the BAMOE v9.2.0 Maven Repository (`bamoe-9.2.0-maven-repository.zip`) from the official product archive download site:
+1.  Download the BAMOE v9.2.1 Maven Repository (`bamoe-9.2.1-maven-repository.zip`) from the official product archive download site:
  
     - [**IBM Passport Advantage**](https://www.ibm.com/software/passportadvantage/pao_customer.html)
     - [**IBM Fix Central**](https://www.ibm.com/support/fixcentral/)
@@ -78,7 +78,7 @@ If you prefer not to use containers, you can download and configure the BAMOE Ma
             <repositories>
                 <repository>
                     <id>ibm-bamoe-offline-maven-repository</id>
-                    <url>file:///Users/${user.home}/.m2/bamoe-9.2.1.GA-maven-repository</url>
+                    <url>file://${user.home}/.m2/bamoe-9.2.1.GA-maven-repository</url>
                     <releases>
                         <enabled>true</enabled>
                     </releases>
@@ -91,7 +91,7 @@ If you prefer not to use containers, you can download and configure the BAMOE Ma
             <pluginRepositories>
                 <pluginRepository>
                     <id>ibm-bamoe-offline-maven-repository</id>
-                    <url>file:///Users/${user.home}/.m2/bamoe-9.2.1.GA-maven-repository</url>
+                    <url>file://${user.home}/.m2/bamoe-9.2.1.GA-maven-repository</url>
                     <releases>
                         <enabled>true</enabled>
                     </releases>
